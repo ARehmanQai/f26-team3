@@ -10,33 +10,43 @@
 ---
 
 ## 1. Overview
-**Vision.** Event Crew connects customers with event staff and service providers, making it easier to find and book reliable crews for events.
+**Vision.** Event Crew is a service marketplace that connects customers with event staff and service providers. The system allows customers to discover, review, and book event services while allowing providers to manage their profiles, services, and customer bookings.
 
 **Glossary** Terms used in the project
 - **Customer:** A person who uses Event Crew to find and book event services.
-- **Provider:** description
+- **Provider:** A person or business that offers event-related services through Event Crew.
+- **Event Service:** A service offered by a provider to assist with event setup, staffing, volunteering, or other event-related needs.
+- **Profile:** Information about a customer or provider, including relevant personal, professional, and service-related information.
+- **Booking:** A customer's request to reserve a provider's event service.
+- **Work History:** Information about a provider's previous event-related experience and completed work.
+- **Review:** Feedback submitted by a customer about a provider or an event service.
+- **Customer Statistics:** Information available to providers about their customers and booked services.
 
 **Primary Users / Roles.**
 - **Customer (e.g., Student/Patient/Pet Owner/etc. )** — Find and book event crews.
-- **Provider (e.g., Teacher/Doctor/Pet Sitter/etc. )** — 1 line goal statement.
-
+- **Provider (e.g., Teacher/Doctor/Pet Sitter/etc. )** — Promote and manage event services and manage customer bookings.
 
 **Scope (this semester).**
-- <Profiles (Customer and Provider)>
-- <Reviews/Ratings>
-- <Browse and Book services>
-- <Create services and list work history>
+- Customer and provider account profiles
+- Provider profiles containing experience and event service information
+- Provider work history
+- Creating and managing event service listings
+- Browsing available providers and event services
+- Provider ratings and customer reviews
+- Booking event services
+- Providers viewing customer and booking statistics
+- Providers viewing upcoming booked services
+- Providers responding to customer reviews
 
 **Out of scope (deferred).**
-- <Payment system>
-- <Search by location and time>
+- Payment processing and online transactions
+- Search and filtering based on location and time
 
 > This document is **requirements‑level** and solution‑neutral; design decisions (UI layouts, API endpoints, schemas) are documented separately.
 
 ---
 
 ## 2. Functional Requirements (User Stories)
-Write each story as: **As a `<role>`, I want `<capability>`, so that `<benefit>`.** Each story includes at least one **Given/When/Then** scenario.
 
 ### 2.1 Customer Stories
 - **US‑1 — <Register and manage profile>**  
@@ -83,59 +93,62 @@ Write each story as: **As a `<role>`, I want `<capability>`, so that `<benefit>`
   ```
 
 ### 2.2 Provider Stories
-- **US-20 — <short title>**  
-  _Story:_ As a provider, I want … so that …  
+- **US-5 — <Create and update provider profile>**  
+  _Story:_ As a provider, I want to create and update my profile so that customers can learn about my experience and qualifications.  
   _Acceptance:_
   ```gherkin
-  Scenario: <happy path>
-    Given <preconditions>
-    When  <action>
-    Then  <observable outcome>
+  Scenario: <Create and update provider profile>
+    Given <I am logged in as a provider>
+    When  <I create or update my profile>
+    Then  <customers should be able to view my updated profile>
   ```
 
-- **US-21 — <short title>**  
-  _Story:_ As a provider, I want … so that …  
+- **US-6 — <Respond to customer reviews>**  
+  _Story:_ As a provider, I want to respond to reviews left by customers so that I can address customer feedback.
   _Acceptance:_
   ```gherkin
-  Scenario: <happy path>
-    Given <preconditions>
-    When  <action>
-    Then  <observable outcome>
+  Scenario: <Respond to a customer review>
+    Given <I am logged in as a provider>
+    When  <I recieve a review for my service>
+    Then  <I should be able to submit a response to the review>
   ```
 
-### 2.3 SysAdmin Stories
-- **US‑30 — <short title>**  
-  _Story:_ As a sysadmin, I want … so that …  
+- **US‑7 — <Create and manage services>**  
+  _Story:_ As a provider, I want to create and manage the services and skills I provide so that customers can understand what services I offer. 
   _Acceptance:_
   ```gherkin
-  Scenario: <happy path>
-    Given <preconditions>
-    When  <action>
-    Then  <observable outcome>
+  Scenario: <Create a service>
+    Given <I am logged in as a provider>
+    When  <I add a service and specify the relevant skills>
+    Then  <the service should be saved and available for customers to view>
   ```
 
-- **US‑31 — <short title>**  
-  _Story:_ As a sysadmin, I want … so that …  
+- **US‑8 — <View upcoming booked services>**  
+  _Story:_ As a provider, I want to view my upcoming booked services so that I can keep track of my scheduled event commitments.  
   _Acceptance:_
   ```gherkin
-  Scenario: <happy path>
-    Given <preconditions>
-    When  <action>
-    Then  <observable outcome>
+  Scenario: <View upcoming booked services>
+    Given <I am logged in as a provider>
+    When  <I have one or more booked services>
+    Then  <I should see the services that have been booked by customers>
   ```
 
 ---
 
 ## 3. Non‑Functional Requirements (make them measurable)
-- **Performance:** description 
-- **Availability/Reliability:** description
-- **Security/Privacy:** description
-- **Usability:** description
+- **Performance:** 95% of standard page requests should be completed within 2 seconds under typical system load.
+- **Availability/Reliability:** The system should successfully process valid user actions without data loss and should handle unexpected errors without exposing or corrupting user data.
+- **Security/Privacy:** The system must require authentication for protected customer and provider functions. Users must only be able to view or modify information they are authorized to access.
+- **Usability:** A new user should be able to create an account, browse available services, and complete a booking without external assistance.
 
 ---
 
 ## 4. Assumptions, Constraints, and Policies
-- list any rules, policies, assumptions, etc.
+- The system assumes users have a stable internet connection and access to a modern web browser.
+- Modern browsers (latest Chrome/Firefox/Edge/Safari) and stable connectivity.
+- Course timeline and campus infrastructure constraints apply.
+- Customers can submit reviews only for services they have booked and used.
+- Providers can respond only to reviews associated with their own services.
 
 ---
 
