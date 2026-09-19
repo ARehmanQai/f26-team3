@@ -109,7 +109,7 @@
   ```gherkin
   Scenario: <Respond to a customer review>
     Given <I am logged in as a provider>
-    When  <I recieve a review for my service>
+    When  <I recieve a review for my service from a customer>
     Then  <I should be able to submit a response to the review>
   ```
 
