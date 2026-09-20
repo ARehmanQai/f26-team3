@@ -5,3 +5,8 @@
     border: 1px solid #ddd;
     border-radius: 12px;
 }
+
+.signup-container h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
