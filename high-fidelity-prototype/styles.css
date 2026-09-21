@@ -1,0 +1,32 @@
+
+/* signup page */
+.signup-container {
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 40px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+}
+
+.signup-title {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.signup-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* login page */
+
+.login-container {
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 40px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+}
+
+/* profile page */ 
