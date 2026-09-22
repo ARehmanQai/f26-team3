@@ -33,6 +33,24 @@
 
 /* Web Colors End */
 
+/* Navbar Buttons */
+.nav-button {
+    background-color: rgb(66, 91, 154) ;
+    border-radius: 6px;
+    padding: 8px 14px;
+    margin-left: 12px;
+}
+
+/* Navbar Buttons end */
+
+/* Navbar Search */
+
+.nav-search {
+    width: 200px;
+}
+
+/* Navbar Search end */
+
 
 
 /* signup page */
