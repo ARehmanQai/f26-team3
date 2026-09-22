@@ -1,3 +1,39 @@
+/* Project Colors */
+.ec-dark-blue{
+    color: rgb(66, 91, 154);
+}
+
+.bg-ec-dark-blue{
+    background-color: rgb(118, 192, 236);
+}
+
+.ec-light-blue{
+    color: rgb(118, 192, 236);
+}
+
+.bg-ec-light-blue{
+    background-color: rgb(118, 192, 236);
+}
+
+.ec-beige{
+    color: rgb(255, 246, 220);
+}
+
+.bg-ec-beige{
+    background-color: rgb(255, 246, 220);
+}
+
+.ec-pink{
+    color: rgb(255, 149, 165);
+}
+
+.bg-ec-pink{
+    background-color: rgb(255, 149, 165);
+}
+
+/* Web Colors End */
+
+
 
 /* signup page */
 .signup-container {
