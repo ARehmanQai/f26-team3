@@ -56,6 +56,16 @@
     color: rgb(66, 91, 154);
 }
 
+.event-button {
+    color: rgb(66, 91, 154);
+    border: 1px solid rgb(66, 91, 154);
+}
+
+.event-button:hover {
+    background-color: rgb(66, 91, 154);
+    color: white;
+}
+
 
 
 /* signup page */
