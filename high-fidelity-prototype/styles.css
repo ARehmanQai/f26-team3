@@ -67,6 +67,8 @@
     color: white;
 }
 
+/* Home Page end */
+
 
 
 /* signup page */
@@ -147,7 +149,7 @@
 }
 
 .profile-header h1{
-    color: rgb(66, 91, 154)
+    color: rgb(66, 91, 154);
 }
 
 /* profile page end */
@@ -159,3 +161,43 @@
 }
 
 /* Customer Dashboard end */
+
+/* Customer View Bookings */
+
+.bookings-header h1 {
+    color: rgb(66, 91, 154);
+}
+
+.bookings-title {
+    color: rgb(66, 91, 154);
+}
+
+.bookings-status {
+    color: rgb(66, 91, 154);
+    font-weight: 600;
+}
+
+/* Customer View Bookings End */
+
+/* Review Page */
+
+.review-header h1{
+    color: rgb(66, 91, 154);
+}
+
+.review-container {
+    max-width: 650px;
+    margin: 50px auto;
+    padding: 40px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .8);
+}
+
+.review-title {
+     color: rgb(66, 91, 154);
+    margin-bottom: 30px;
+}
+
+/* Review Page End */
