@@ -166,7 +166,14 @@
     color: rgb(66, 91, 154);
 }
 
+.bookings-title {
+    color: rgb(66, 91, 154);
+}
 
+.bookings-status {
+    color: rgb(66, 91, 154);
+    font-weight: 600;
+}
 
 
 
