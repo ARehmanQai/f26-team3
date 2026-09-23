@@ -140,6 +140,16 @@
     color: white;
 }
 
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-page footer {
+    margin-top: auto !important;
+}
+
 
 
 /* login page end */
@@ -168,6 +178,16 @@
 
 .dashboard-header h1 {
     color: rgb(66, 91, 154);
+}
+
+.dashboard-page{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-page footer {
+    margin-top: auto !important;
 }
 
 /* Customer Dashboard end */
