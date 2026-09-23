@@ -33,7 +33,7 @@
 
 /* Web Colors End */
 
-/* Navbar Buttons */
+/* Navbar */
 .nav-button {
     color: rgb(35, 55, 110) ;
     padding: 8px 12px;
@@ -48,15 +48,9 @@
     width: 240px;
 }
 
-/* Navbar Buttons end */
+/* Navbar end */
 
-/* Navbar Search */
 
-.nav-search {
-    width: 200px;
-}
-
-/* Navbar Search end */ 
 
 /* Home Page */
 .event-icons {
@@ -82,6 +76,8 @@
     padding: 40px;
     border: 1px solid #ddd;
     border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .8);
 }
 
 .signup-container h1 {
@@ -102,7 +98,7 @@
     border: none;
 }
 
-.signup-button {
+.signup-button:hover {
  background-color:rgb(50, 70, 125) ;
  color: white;
 }
