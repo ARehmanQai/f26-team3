@@ -132,4 +132,30 @@
 
 /* login page end */
 
+
+
 /* profile page */ 
+
+.profile-container {
+    max-width: 650px;
+    margin: 50px auto;
+    padding: 40px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .8);
+}
+
+.profile-header h1{
+    color: rgb(66, 91, 154)
+}
+
+/* profile page end */
+
+/* Customer Dashboard */
+
+.dashboard-header h1 {
+    color: rgb(66, 91, 154);
+}
+
+/* Customer Dashboard end */
