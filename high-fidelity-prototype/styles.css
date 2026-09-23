@@ -141,5 +141,8 @@
 
 /* Customer Dashboard */
 
+.dashboard-header h1 {
+    color: rgb(66, 91, 154);
+}
 
 /* Customer Dashboard end */
