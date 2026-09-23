@@ -103,14 +103,33 @@
  color: white;
 }
 
+/* signup page end */
+
 /* login page */
 
 .login-container {
-    max-width: 600px;
-    margin: 60px auto;
+    max-width: 650px;
+    margin: 50px auto;
     padding: 40px;
     border: 1px solid #ddd;
     border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .8);
 }
+
+.login-button {
+    background-color: rgb(66, 91, 154);
+    color: white;
+    border: none;
+}
+
+.login-button:hover {
+    background-color: rgb(50, 70, 125);
+    color: white;
+}
+
+
+
+/* login page end */
 
 /* profile page */ 
