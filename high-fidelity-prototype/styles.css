@@ -35,10 +35,17 @@
 
 /* Navbar Buttons */
 .nav-button {
-    background-color: rgb(66, 91, 154) ;
-    border-radius: 6px;
-    padding: 8px 14px;
-    margin-left: 12px;
+    color: rgb(35, 55, 110) ;
+    padding: 8px 12px;
+    margin-left: 8px;
+    font-weight: 500;
+}
+.nav-button:hover {
+    color: rgb(20, 35, 80)
+}
+
+.nav-search {
+    width: 240px;
 }
 
 /* Navbar Buttons end */
@@ -49,7 +56,22 @@
     width: 200px;
 }
 
-/* Navbar Search end */
+/* Navbar Search end */ 
+
+/* Home Page */
+.event-icons {
+    color: rgb(66, 91, 154);
+}
+
+.event-button {
+    color: rgb(66, 91, 154);
+    border: 1px solid rgb(66, 91, 154);
+}
+
+.event-button:hover {
+    background-color: rgb(66, 91, 154);
+    color: white;
+}
 
 
 
