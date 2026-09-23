@@ -35,10 +35,13 @@
 
 /* Navbar Buttons */
 .nav-button {
-    background-color: rgb(66, 91, 154) ;
-    border-radius: 6px;
-    padding: 8px 14px;
-    margin-left: 12px;
+    color: rgb(35, 55, 110) ;
+    padding: 8px 12px;
+    margin-left: 8px;
+    font-weight: 500;
+}
+.nav-button:hover {
+    color: rgb(20, 35, 80)
 }
 
 /* Navbar Buttons end */
