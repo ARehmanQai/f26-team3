@@ -48,6 +48,18 @@
     width: 240px;
 }
 
+.sign-button {
+    background-color: rgb(66, 91, 154);
+    color: white;
+    border: none;
+    margin-left: 12px;
+}
+
+.sign-button:hover {
+ background-color:rgb(50, 70, 125) ;
+ color: white;
+}
+
 /* Navbar end */
 
 
@@ -140,6 +152,16 @@
     color: white;
 }
 
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-page footer {
+    margin-top: auto !important;
+}
+
 
 
 /* login page end */
@@ -162,12 +184,32 @@
     color: rgb(66, 91, 154);
 }
 
+.profile-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-page footer {
+    margin-top: auto !important;
+}
+
 /* profile page end */
 
 /* Customer Dashboard */
 
 .dashboard-header h1 {
     color: rgb(66, 91, 154);
+}
+
+.dashboard-page{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-page footer {
+    margin-top: auto !important;
 }
 
 /* Customer Dashboard end */
