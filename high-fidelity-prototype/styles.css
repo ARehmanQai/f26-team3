@@ -67,6 +67,16 @@
     color: white;
 }
 
+
+.hero-section {
+    padding-bottom: 60px;
+    border-bottom: 1px solid rgba(66, 91, 154, .25);
+}
+
+.hero-section h1 {
+    color: rgb(66, 91, 154)
+}
+
 /* Home Page end */
 
 
