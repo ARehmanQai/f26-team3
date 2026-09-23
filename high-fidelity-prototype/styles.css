@@ -172,6 +172,16 @@
     color: rgb(66, 91, 154);
 }
 
+.profile-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-page footer {
+    margin-top: auto !important;
+}
+
 /* profile page end */
 
 /* Customer Dashboard */
