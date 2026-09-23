@@ -1,10 +1,10 @@
 /* Project Colors */
 .ec-dark-blue{
-    color: rgb(66, 91, 154);
+    color: rgb(35, 55, 110) ;
 }
 
 .bg-ec-dark-blue{
-    background-color: rgb(118, 192, 236);
+    background-color: rgb(35, 55, 110);
 }
 
 .ec-light-blue{
@@ -31,7 +31,7 @@
     background-color: rgb(255, 149, 165);
 }
 
-/* Web Colors End */
+/* Project End */
 
 /* Navbar */
 .nav-button {
@@ -211,3 +211,11 @@
 }
 
 /* Review Page End */
+
+/* Footer */
+
+footer div ul li a{
+    color: rgb(35, 55, 110) ;
+}
+
+/* Footer End */
