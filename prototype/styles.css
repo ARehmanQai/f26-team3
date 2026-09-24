@@ -1,0 +1,244 @@
+/* Project Colors */
+.ec-dark-blue{
+    color: rgb(35, 55, 110) ;
+}
+
+.bg-ec-dark-blue{
+    background-color: rgb(35, 55, 110);
+}
+
+.ec-light-blue{
+    color: rgb(118, 192, 236);
+}
+
+.bg-ec-light-blue{
+    background-color: rgb(118, 192, 236);
+}
+
+.ec-beige{
+    color: rgb(255, 246, 220);
+}
+
+.bg-ec-beige{
+    background-color: rgb(255, 246, 220);
+}
+
+.ec-pink{
+    color: rgb(255, 149, 165);
+}
+
+.bg-ec-pink{
+    background-color: rgb(255, 149, 165);
+}
+
+/* Project End */
+
+/* Navbar */
+.nav-button {
+    color: rgb(35, 55, 110) ;
+    padding: 8px 12px;
+    margin-left: 8px;
+    font-weight: 500;
+}
+.nav-button:hover, footer div ul li a:hover {
+    color: rgb(20, 35, 80)
+}
+
+.nav-search {
+    width: 240px;
+}
+
+/* Navbar end */
+
+
+
+/* Home Page */
+.event-icons {
+    color: rgb(66, 91, 154);
+}
+
+.event-button {
+    color: rgb(66, 91, 154);
+    border: 1px solid rgb(66, 91, 154);
+}
+
+.event-button:hover {
+    background-color: rgb(66, 91, 154);
+    color: white;
+}
+
+
+.hero-section {
+    padding-bottom: 60px;
+    border-bottom: 1px solid rgba(66, 91, 154, .25);
+}
+
+.hero-section h1 {
+    color: rgb(66, 91, 154)
+}
+
+/* Home Page end */
+
+
+
+/* signup page */
+.signup-container {
+    max-width: 650px;
+    margin: 50px auto;
+    padding: 40px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .8);
+}
+
+.signup-container h1, .pr-signup-container h1, .pr-signup-container h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: rgb(66, 91, 154);
+    font-weight: 700;
+}
+
+.signup-container h2, .pr-signup-container h2, .pr-signup-container h4 {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.signup-button {
+    background-color: rgb(66, 91, 154);
+    color: white;
+    border: none;
+}
+
+.signup-button:hover {
+ background-color:rgb(50, 70, 125) ;
+ color: white;
+}
+
+/* signup page end */
+
+/* login page */
+
+.login-container {
+    max-width: 650px;
+    margin: 50px auto;
+    padding: 40px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .8);
+}
+
+.login-button {
+    background-color: rgb(66, 91, 154);
+    color: white;
+    border: none;
+}
+
+.login-button:hover {
+    background-color: rgb(50, 70, 125);
+    color: white;
+}
+
+
+
+/* login page end */
+
+
+
+/* profile page */ 
+
+.profile-container {
+    max-width: 650px;
+    margin: 50px auto;
+    padding: 40px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .8);
+}
+
+.profile-header h1{
+    color: rgb(66, 91, 154);
+}
+
+/* profile page end */
+
+/* Customer Dashboard */
+
+.dashboard-header h1 {
+    color: rgb(66, 91, 154);
+}
+
+/* Customer Dashboard end */
+
+/* Customer View Bookings */
+
+.bookings-header h1 {
+    color: rgb(66, 91, 154);
+}
+
+.bookings-title {
+    color: rgb(66, 91, 154);
+}
+
+.bookings-status {
+    color: rgb(66, 91, 154);
+    font-weight: 600;
+}
+
+/* Customer View Bookings End */
+
+/* Review Page */
+
+.review-header h1{
+    color: rgb(66, 91, 154);
+}
+
+.review-container {
+    max-width: 650px;
+    margin: 50px auto;
+    padding: 40px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .8);
+}
+
+.review-title {
+     color: rgb(66, 91, 154);
+    margin-bottom: 30px;
+}
+
+/* Review Page End */
+
+/* Footer */
+
+footer div ul li a{
+    color: rgb(35, 55, 110) ;
+}
+
+/* Footer End */
+
+/* Provider Sign UP */
+
+.form-container{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.484)), url('resources/prvdr-login-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;  
+    width: 100%;
+    min-height: 100vh;
+}
+
+.pr-signup-container{
+    max-width: 650px;
+    margin: 50px 0;
+    padding: 40px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .8);
+}
+
+/* Provider Signup end  */
