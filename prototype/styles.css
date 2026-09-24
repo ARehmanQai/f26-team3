@@ -242,3 +242,74 @@ footer div ul li a{
 }
 
 /* Provider Signup end  */
+
+/* Provider Profile Preview */
+
+.provider-preview-card {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
+}
+
+.provider-profile-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.provider-name {
+    color: rgb(66, 91, 154);
+    font-weight: 700;
+}
+
+.provider-rating {
+    color: #f5b301;
+}
+
+.provider-status {
+    background-color: rgb(118, 192, 236);
+    color: rgb(35, 55, 110);
+    font-size: 0.9rem;
+    padding: 8px 12px;
+    border-radius: 20px;
+}
+
+.provider-description {
+    color: #555;
+    line-height: 1.6;
+}
+
+.provider-section-title {
+    color: rgb(66, 91, 154);
+    font-weight: 600;
+}
+
+.provider-service {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 100%;
+    padding: 15px;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    background-color: #fafafa;
+}
+
+.provider-service i {
+    font-size: 1.7rem;
+    color: rgb(66, 91, 154);
+}
+
+.provider-service h6 {
+    margin: 0 0 4px 0;
+    color: rgb(35, 55, 110);
+}
+
+.provider-service p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #777;
+}
+
+/* Customer Dashboard End */
