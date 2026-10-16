@@ -3,6 +3,7 @@ package f2_Team3.Event.Crew.service;
 import f2_Team3.Event.Crew.entity.Customer;
 import f2_Team3.Event.Crew.repository.CustomerRepository;
 import f2_Team3.Event.Crew.dto.CustomerDTO;
+import f2_Team3.Event.Crew.service.NotFoundException;
 
 import org.springframework.stereotype.Service;
 
@@ -39,7 +40,7 @@ public class CustomerService {
 
 public CustomerDTO updateCustomer(Long id, CustomerDTO customerDTO) {
     Customer customer = CustomerRepository.findById(id)
-            .orElseThrow(() -> new RuntimeException("Customer not found"));
+            .orElseThrow(() -> new NotFoundException("404 Not Found"));
 
     customer.setName(customerDTO.getName());
     customer.setEmail(customerDTO.getEmail());
