@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import jakarta.validation.Valid;
+
 
 @RestController
 public class CustomerController {
@@ -20,7 +22,7 @@ public class CustomerController {
     }
 
 @PostMapping("/api/customers")
-public ResponseEntity<CustomerDTO> createCustomer(@RequestBody CustomerDTO customerDTO) {
+public ResponseEntity<CustomerDTO> createCustomer(@RequestBody @Valid CustomerDTO customerDTO) {
     CustomerDTO createdCustomer = customerService.createCustomer(customerDTO);
 
     URI location = URI.create("/api/customers/" + createdCustomer.getId());
@@ -31,7 +33,7 @@ public ResponseEntity<CustomerDTO> createCustomer(@RequestBody CustomerDTO custo
 @PutMapping("/api/customers/{id}")
 public ResponseEntity<CustomerDTO> updateCustomer(
         @PathVariable Long id,
-        @RequestBody CustomerDTO customerDTO) {
+        @RequestBody @Valid CustomerDTO customerDTO) {
 
     CustomerDTO updatedCustomer = customerService.updateCustomer(id, customerDTO);
 
