@@ -37,15 +37,27 @@ public class CustomerService {
     return response;
 }
 
-    public Customer updateCustomer(Long id, Customer updatedCustomer) {
+public CustomerDTO updateCustomer(Long id, CustomerDTO customerDTO) {
     Customer customer = CustomerRepository.findById(id)
             .orElseThrow(() -> new RuntimeException("Customer not found"));
 
-    customer.setName(updatedCustomer.getName());
-    customer.setEmail(updatedCustomer.getEmail());
-    customer.setPassWord(updatedCustomer.getPassWord());
-    customer.setPhoneNumber(updatedCustomer.getPhoneNumber());
+    customer.setName(customerDTO.getName());
+    customer.setEmail(customerDTO.getEmail());
+    customer.setPassWord(customerDTO.getPassWord());
+    customer.setPhoneNumber(customerDTO.getPhoneNumber());
 
-    return CustomerRepository.save(customer);
+    Customer updatedCustomer = CustomerRepository.save(customer);
+
+    CustomerDTO response = new CustomerDTO(
+            updatedCustomer.getName(),
+            updatedCustomer.getEmail(),
+            updatedCustomer.getPassWord(),
+            updatedCustomer.getPhoneNumber()
+    );
+
+    response.setId(updatedCustomer.getId());
+
+    return response;
 }
+
 }
