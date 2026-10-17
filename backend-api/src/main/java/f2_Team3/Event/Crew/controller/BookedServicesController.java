@@ -30,5 +30,14 @@ public class BookedServicesController {
 
         return ResponseEntity.status(HttpStatus.CREATED).body(createdBooking);
     }
+
+    @PutMapping("/{bookingId}/cancel")
+    public ResponseEntity<Void> cancelBooking(
+        @PathVariable Long customerId,
+        @PathVariable Long bookingId) {
+
+        bookedServicesService.cancelBooking(customerId, bookingId);
+        return ResponseEntity.noContent().build();
+}
     
 }

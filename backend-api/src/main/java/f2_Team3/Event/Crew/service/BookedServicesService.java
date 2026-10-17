@@ -46,4 +46,16 @@ public class BookedServicesService {
 
     return response;
     }
+
+    public void cancelBooking(Long customerId, Long bookingId) {
+    BookedServices booking = bookedServicesRepository.findById(bookingId)
+        .orElseThrow(() -> new NotFoundException("Booking not found"));
+
+     if (!booking.getCustomer().getId().equals(customerId)) {
+        throw new NotFoundException("Booking not found");
+    }
+
+    booking.setStatus("CANCELLED");
+    bookedServicesRepository.save(booking);
+    }
 }

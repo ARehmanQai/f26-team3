@@ -8,7 +8,6 @@ public class BookedServicesDTO {
 
     private Long id;
 
-    @NotNull
     private Long customerId;
 
     @NotNull
