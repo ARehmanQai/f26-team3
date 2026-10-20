@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import jakarta.validation.Valid;
 
 
@@ -38,6 +40,18 @@ public ResponseEntity<CustomerDTO> updateCustomer(
     CustomerDTO updatedCustomer = customerService.updateCustomer(id, customerDTO);
 
     return ResponseEntity.ok(updatedCustomer);
+}
+
+@GetMapping("/api/customers/{id}")
+public ResponseEntity<CustomerDTO> getCustomerById(@PathVariable Long id) {
+    CustomerDTO customer = customerService.getCustomerById(id);
+    return ResponseEntity.ok(customer);
+}
+
+@DeleteMapping("/api/customers/{id}")
+public ResponseEntity<Void> deleteCustomer(@PathVariable Long id) {
+    customerService.deleteCustomer(id);
+    return ResponseEntity.noContent().build();
 }
 
 }

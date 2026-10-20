@@ -61,4 +61,27 @@ public CustomerDTO updateCustomer(Long id, CustomerDTO customerDTO) {
     return response;
 }
 
+public CustomerDTO getCustomerById(Long id) {
+    Customer customer = CustomerRepository.findById(id)
+            .orElseThrow(() -> new NotFoundException("404 Not Found"));
+
+    CustomerDTO response = new CustomerDTO(
+            customer.getName(),
+            customer.getEmail(),
+            customer.getPassWord(),
+            customer.getPhoneNumber()
+    );
+
+    response.setId(customer.getId());
+
+    return response;
+}
+
+public void deleteCustomer(Long id) {
+    Customer customer = CustomerRepository.findById(id)
+            .orElseThrow(() -> new NotFoundException("404 Not Found"));
+
+    CustomerRepository.delete(customer);
+}
+
 }
