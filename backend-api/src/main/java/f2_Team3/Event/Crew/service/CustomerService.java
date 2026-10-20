@@ -77,4 +77,11 @@ public CustomerDTO getCustomerById(Long id) {
     return response;
 }
 
+public void deleteCustomer(Long id) {
+    Customer customer = CustomerRepository.findById(id)
+            .orElseThrow(() -> new NotFoundException("404 Not Found"));
+
+    CustomerRepository.delete(customer);
+}
+
 }
