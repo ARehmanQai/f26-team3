@@ -13,7 +13,6 @@ public class BookedServices {
     @NotBlank
     private String status;
 
-    @NotBlank
     private String notes;
 
     @NotBlank
