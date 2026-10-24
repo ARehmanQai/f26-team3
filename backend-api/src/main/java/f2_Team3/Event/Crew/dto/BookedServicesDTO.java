@@ -13,7 +13,7 @@ public class BookedServicesDTO {
     @NotNull
     private Long eventServiceId;
 
-    @NotBlank
+    
     private String status;
 
     @NotBlank

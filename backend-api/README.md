@@ -65,3 +65,16 @@ GET /api/customers/1
 ```http
 DELETE /api/customers/1
 ```
+
+## Service Booking Management - Functionality Incomplete
+
+| Method | Path | Purpose | Response Code | User Story / Use Case | Implemented By |
+| ------ | ---- | ------- | ------------- | --------------------- | -------------- |
+| `POST` | `/api/customers/{customerId}/subscriptions` | Book an event service | `201 Created` | Book Event Service | Justin |
+| `PUT` | `/api/customers/{customerId}/subscriptions/{bookingId}/cancel` | Cancel a booked service | `204 No Content` | Cancel Booking | Justin |
+
+## Review Management - Functionality Incomplete
+
+| Method | Path | Purpose | Response Code | User Story / Use Case | Implemented By |
+| ------ | ---- | ------- | ------------- | --------------------- | -------------- |
+| `POST` | `/api/services/{serviceId}/reviews` | Submit a review for an event service | `201 Created` | Review Event Service | Justin |
