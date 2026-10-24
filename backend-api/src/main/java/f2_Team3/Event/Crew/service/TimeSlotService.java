@@ -34,6 +34,16 @@ public class TimeSlotService {
         return timeSlotRepository.save(existingTimeSlot);
     }
 
+    private void validateTimes(TimeSlot timeSlot) {
+    if (timeSlot.getStartTime() == null || timeSlot.getEndTime() == null) {
+        throw new IllegalArgumentException("Start time and end time are required");
+    }
+
+    if (!timeSlot.getEndTime().isAfter(timeSlot.getStartTime())) {
+        throw new IllegalArgumentException("End time must be after start time");
+    }
+}
+
 
 
     
