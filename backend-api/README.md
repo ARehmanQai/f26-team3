@@ -11,6 +11,10 @@
 
 - local: `http://localhost:8080/api`
 
+## Live Deployment
+
+https://f26-team3.onrender.com
+
 ## Customer Profile Management
 
 | Method | Path | Purpose | Response Code | User Story / Use Case | Implemented By |
