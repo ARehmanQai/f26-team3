@@ -2,6 +2,7 @@ package f2_Team3.Event.Crew.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Email;
 
 @Entity
 public class Provider {
