@@ -26,15 +26,20 @@ public class BookedServices {
     @JoinColumn(name = "event_service_id", nullable = false)
     private EventService eventService;
 
+    @ManyToOne
+    @JoinColumn(name = "time_slot_id", nullable = false)
+    private TimeSlot timeSlot;
+
     public BookedServices(){
 
     }
-    public BookedServices(String status, String notes, String location, Customer customer, EventService eventService){
+    public BookedServices(String status, String notes, String location, Customer customer, EventService eventService, TimeSlot timeSlot){
         this.status = status;
         this.notes = notes;
         this.location = location;
         this.customer = customer;
         this.eventService = eventService;
+        this.timeSlot = timeSlot;
     }
 
     public Long getId(){
@@ -71,6 +76,13 @@ public class BookedServices {
     }
     public void setEventService(EventService eventService){
         this.eventService = eventService;
+    }
+    public TimeSlot getTimeSlot() {
+        return timeSlot;
+    }
+
+    public void setTimeSlot(TimeSlot timeSlot) {
+        this.timeSlot = timeSlot;
     }
 
     
