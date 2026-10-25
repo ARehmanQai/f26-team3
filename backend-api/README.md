@@ -31,7 +31,9 @@ https://f26-team3.onrender.com
 ```http
 POST /api/customers
 Content-Type: application/json
+```
 
+```json
 {
   "name": "John Doe",
   "email": "john.doe@example.com",
@@ -45,7 +47,9 @@ Content-Type: application/json
 ```http
 PUT /api/customers/1
 Content-Type: application/json
+```
 
+```json
 {
   "name": "John Doe",
   "email": "john.doe.updated@example.com",
@@ -66,15 +70,78 @@ GET /api/customers/1
 DELETE /api/customers/1
 ```
 
-## Service Booking Management - Functionality Incomplete
+## Service Booking Management
 
 | Method | Path | Purpose | Response Code | User Story / Use Case | Implemented By |
 | ------ | ---- | ------- | ------------- | --------------------- | -------------- |
+
+
 | `POST` | `/api/customers/{customerId}/subscriptions` | Book an event service | `201 Created` | Book Event Service | Justin |
 | `PUT` | `/api/customers/{customerId}/subscriptions/{bookingId}/cancel` | Cancel a booked service | `204 No Content` | Cancel Booking | Justin |
 
-## Review Management - Functionality Incomplete
+#### Book a Service
+
+
+```http
+POST /api/customers/1/subscriptions
+Content-Type: application/json ```
+
+```json
+{
+  "customerId": 1,
+  "eventServiceId": 1,
+  "timeSlotId": 1,
+  "notes": "Please set up the decorations before the event.",
+  "location": "Greensboro, NC"
+}
+```
+#### Cancel a Booked Service
+
+```http
+PUT /api/customers/1/subscriptions/1/cancel
+```
+
+
+## Review Management
 
 | Method | Path | Purpose | Response Code | User Story / Use Case | Implemented By |
 | ------ | ---- | ------- | ------------- | --------------------- | -------------- |
+
 | `POST` | `/api/services/{serviceId}/reviews` | Submit a review for an event service | `201 Created` | Review Event Service | Justin |
+
+#### Submit a Review
+
+```http
+POST /api/services/1/reviews
+Content-Type: application/json
+```
+
+```json
+{
+  "customerId": 1,
+  "rating": 5,
+  "comments": "Excellent service! Everything was organized and completed on time."
+}
+```
+
+## Time Slot Management
+
+| Method | Path | Purpose | Response Code | User Story / Use Case | Implemented By |
+| ------ | ---- | ------- | ------------- | --------------------- | -------------- |
+| `POST` | `/api/timeslots` | Create a time slot with a start and end time | `201 Created` | Manage Service Time Slots | Justin |
+
+### Example Time Slot Request
+
+#### Create a Time Slot
+
+```http
+POST /api/timeslots
+Content-Type: application/json
+```
+
+```json
+{
+  "startTime": "2026-10-30T10:00:00",
+  "endTime": "2026-10-30T14:00:00"
+}
+```

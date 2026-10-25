@@ -22,6 +22,9 @@ public class BookedServicesDTO {
     @NotBlank
     private String location;
 
+    @NotNull
+    private Long timeSlotId;
+
     public BookedServicesDTO() {
     }
     public BookedServicesDTO(Long customerId, Long eventServiceId, String status, String notes, String location) {
@@ -77,6 +80,14 @@ public class BookedServicesDTO {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public Long getTimeSlotId() {
+        return timeSlotId;
+    }
+
+    public void setTimeSlotId(Long timeSlotId) {
+        this.timeSlotId = timeSlotId;
     }
     
 }

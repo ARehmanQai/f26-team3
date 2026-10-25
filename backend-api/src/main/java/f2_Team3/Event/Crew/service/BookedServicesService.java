@@ -7,6 +7,8 @@ import f2_Team3.Event.Crew.entity.EventService;
 import f2_Team3.Event.Crew.repository.BookedServicesRepository;
 import f2_Team3.Event.Crew.repository.CustomerRepository;
 import f2_Team3.Event.Crew.repository.EventServiceRepository;
+import f2_Team3.Event.Crew.entity.TimeSlot;
+import f2_Team3.Event.Crew.repository.TimeSlotRepository;
 
 import org.springframework.stereotype.Service;
 
@@ -16,36 +18,50 @@ public class BookedServicesService {
     private final BookedServicesRepository bookedServicesRepository;
     private final CustomerRepository customerRepository;
     private final EventServiceRepository eventServiceRepository;
+    private final TimeSlotRepository timeSlotRepository;
 
-    public BookedServicesService(BookedServicesRepository bookedServicesRepository, CustomerRepository customerRepository, EventServiceRepository eventServiceRepository) {
+    public BookedServicesService(BookedServicesRepository bookedServicesRepository, CustomerRepository customerRepository, EventServiceRepository eventServiceRepository, TimeSlotRepository timeSlotRepository) {
         this.bookedServicesRepository = bookedServicesRepository;
         this.customerRepository = customerRepository;
         this.eventServiceRepository = eventServiceRepository;
+        this.timeSlotRepository = timeSlotRepository;
     }
 
-    public BookedServicesDTO bookService(BookedServicesDTO bookedServicesDTO) {
-        Customer customer = customerRepository.findById(bookedServicesDTO.getCustomerId())
-            .orElseThrow(() -> new NotFoundException("Customer not found"));
+public BookedServicesDTO bookService(BookedServicesDTO bookedServicesDTO) {
 
-        EventService eventService = eventServiceRepository.findById(bookedServicesDTO.getEventServiceId())
-            .orElseThrow(() -> new NotFoundException("Event service not found"));
+    Customer customer = customerRepository.findById(bookedServicesDTO.getCustomerId())
+        .orElseThrow(() -> new NotFoundException("Customer not found"));
 
-                BookedServices booking = new BookedServices("BOOKED", bookedServicesDTO.getNotes(), bookedServicesDTO.getLocation(), customer, eventService);
+    EventService eventService = eventServiceRepository.findById(bookedServicesDTO.getEventServiceId())
+        .orElseThrow(() -> new NotFoundException("Event service not found"));
 
-                BookedServices savedBooking = bookedServicesRepository.save(booking);
+    TimeSlot timeSlot = timeSlotRepository.findById(bookedServicesDTO.getTimeSlotId())
+        .orElseThrow(() -> new NotFoundException("Time slot not found"));
 
-                BookedServicesDTO response = new BookedServicesDTO(
-                    savedBooking.getCustomer().getId(),
-                    savedBooking.getEventService().getId(),
-                    savedBooking.getStatus(),
-                    savedBooking.getNotes(),
-                    savedBooking.getLocation()
-                                                );
+    BookedServices booking = new BookedServices(
+        "BOOKED",
+        bookedServicesDTO.getNotes(),
+        bookedServicesDTO.getLocation(),
+        customer,
+        eventService,
+        timeSlot
+    );
 
-           response.setId(savedBooking.getId());
+    BookedServices savedBooking = bookedServicesRepository.save(booking);
+
+    BookedServicesDTO response = new BookedServicesDTO(
+        savedBooking.getCustomer().getId(),
+        savedBooking.getEventService().getId(),
+        savedBooking.getStatus(),
+        savedBooking.getNotes(),
+        savedBooking.getLocation()
+    );
+
+    response.setId(savedBooking.getId());
+    response.setTimeSlotId(savedBooking.getTimeSlot().getId());
 
     return response;
-    }
+}
 
     public void cancelBooking(Long customerId, Long bookingId) {
     BookedServices booking = bookedServicesRepository.findById(bookingId)
