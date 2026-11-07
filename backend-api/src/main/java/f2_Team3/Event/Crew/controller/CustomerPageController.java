@@ -25,6 +25,13 @@ public class CustomerPageController {
         return "customer/profile";
     }
 
+    @GetMapping("/customer/dashboard/{id}")
+    public String showDashboard(@PathVariable Long id, Model model) {
+        CustomerDTO customer = customerService.getCustomerById(id);
+        model.addAttribute("customer", customer);
+        return "customer/dashboard";
+    }
+
     @PostMapping("/customer/profile/{id}")
     public String updateProfile(
         @PathVariable Long id,
