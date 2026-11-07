@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DashBoard</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
@@ -48,7 +48,7 @@
     </nav>
 
     <div class = "container mt-5 text-center dashboard-header">
-        <h1> Welcome Back, Lebron James </h1>
+        <h1> Welcome Back,  ${customer.name} </h1>
         <p class = "lead"> What would you like to do? </p>
     </div>
 
@@ -64,7 +64,7 @@
                     <p class="card-text">
                         Find event professionals and services for your event.
                     </p>
-                    <a href="../home.html" class="btn event-button">
+                    <a href="/customer/services/${customer.id}" class="btn event-button">
                         Browse Services
                     </a>
                 </div>
@@ -80,7 +80,7 @@
                     <p class="card-text">
                         View and manage the services you have booked.
                     </p>
-                    <a href="bookings.html" class="btn event-button">
+                    <a href= "/customer/bookings/${customer.id}" class="btn event-button">
                         View Bookings
                     </a>
                 </div>
@@ -96,7 +96,7 @@
                     <p class="card-text">
                         Update your account information.
                     </p>
-                    <a href="profile.html" class="btn event-button">
+                    <a href="/customer/profile/${customer.id}" class="btn event-button">
                         Manage Profile
                     </a>
                 </div>
