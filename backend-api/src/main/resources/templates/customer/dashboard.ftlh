@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DashBoard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+     <nav class="navbar navbar-expand-lg bg-ec-light-blue">
+        <div class="container-fluid d-flex">
+            <a class="navbar-brand link-light fw-bold" href="../home.html">
+                <img src="../resources/logo.png" alt="Event Crew Logo" width="75" height="34">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto ">
+
+
+
+                    <li class="nav-item">
+                        <a class="nav-link nav-button" aria-current="page" href="#"> Browse Provider</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-button" href="../provider/signup.html">Become a provider</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-button" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link signup-button" href="signup.html">Sign Up</a>
+                    </li>
+
+    
+                    </form>
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class = "container mt-5 text-center dashboard-header">
+        <h1> Welcome Back,  ${customer.name} </h1>
+        <p class = "lead"> What would you like to do? </p>
+    </div>
+
+    <div class="container mt-5 pt-4">
+    <div class="row g-4">
+
+        <!-- Browse Services -->
+        <div class="col-md-4">
+            <div class="card h-100 text-center">
+                <div class="card-body p-4">
+                <i class = "bi bi-search fs-1 event-icons"></i>
+                    <h2 class="card-title">Browse Services</h2>
+                    <p class="card-text">
+                        Find event professionals and services for your event.
+                    </p>
+                    <a href="/customer/services/${customer.id}" class="btn event-button">
+                        Browse Services
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- My Booked Services -->
+        <div class="col-md-4">
+            <div class="card h-100 text-center">
+                <div class="card-body p-4">
+                <i class="bi bi-calendar-check-fill fs-1 event-icons"></i>
+                    <h2 class="card-title">My Booked Services</h2>
+                    <p class="card-text">
+                        View and manage the services you have booked.
+                    </p>
+                    <a href= "/customer/bookings/${customer.id}" class="btn event-button">
+                        View Bookings
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Manage Profile -->
+        <div class="col-md-4">
+            <div class="card h-100 text-center">
+                <div class="card-body p-4">
+                <i class="bi bi-person-fill fs-1 event-icons"></i>
+                    <h2 class="card-title">Manage Profile</h2>
+                    <p class="card-text">
+                        Update your account information.
+                    </p>
+                    <a href="/customer/profile/${customer.id}" class="btn event-button">
+                        Manage Profile
+                    </a>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+
+    
+</body>
+
+
+
+
+</html>
