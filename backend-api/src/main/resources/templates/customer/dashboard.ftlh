@@ -13,7 +13,7 @@
      <nav class="navbar navbar-expand-lg bg-ec-light-blue">
         <div class="container-fluid d-flex">
             <a class="navbar-brand link-light fw-bold" href="../home.html">
-                <img src="../resources/logo.png" alt="Event Crew Logo" width="75" height="34">
+                <img src="/resources/logo.png" alt="Event Crew Logo" width="75" height="34">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -104,6 +104,12 @@
         </div>
         </div>
         </div>
+
+    <div class="text-center mt-4 mb-4">
+    <a href="/login" class="btn btn-outline-primary">
+        <i class="bi bi-box-arrow-right"></i> Sign Out
+    </a>
+</div>
 
     
 </body>

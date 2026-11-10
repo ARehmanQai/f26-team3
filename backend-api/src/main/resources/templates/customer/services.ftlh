@@ -10,6 +10,43 @@
 </head>
 <body>
 
+    <nav class="navbar navbar-expand-lg bg-ec-light-blue">
+        <div class="container-fluid d-flex">
+            <a class="navbar-brand link-light fw-bold" href="../home.html">
+                <img src="../resources/logo.png" alt="Event Crew Logo" width="75" height="34">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto ">
+
+
+
+                    <li class="nav-item">
+                        <a class="nav-link nav-button" aria-current="page" href="#"> Browse Provider</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-button" href="../provider/signup.html">Become a provider</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-button" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link signup-button" href="signup.html">Sign Up</a>
+                    </li>
+
+    
+                    </form>
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
 <div class="container mt-4"> 
     <h1>Browse Available Services</h1> 
     <p>Welcome, ${customer.name}! Explore the services available for your event.</p>
