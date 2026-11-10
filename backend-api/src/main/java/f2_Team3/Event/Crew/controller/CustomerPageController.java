@@ -1,5 +1,6 @@
 package f2_Team3.Event.Crew.controller;
 
+import f2_Team3.Event.Crew.service.EventServiceService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,10 +13,12 @@ import f2_Team3.Event.Crew.dto.CustomerDTO;
 
 @Controller
 public class CustomerPageController {
+    private final EventServiceService eventServiceService;
     private final CustomerService customerService;
 
-    public CustomerPageController(CustomerService customerService) {
+    public CustomerPageController(CustomerService customerService,  EventServiceService eventServiceService) {
         this.customerService = customerService;
+        this.eventServiceService = eventServiceService;
     }
 
     @GetMapping("/customer/profile/{id}")
@@ -57,6 +60,16 @@ public class CustomerPageController {
             "Your profile has been updated successfully.");
 
     return "redirect:/customer/profile/" + id;
+}
+
+    @GetMapping("/customer/services/{id}")
+    public String showServices(@PathVariable Long id, Model model) {
+        CustomerDTO customer = customerService.getCustomerById(id);
+
+        model.addAttribute("customer", customer);
+        model.addAttribute("services", eventServiceService.getAllServices("AVAILABLE"));
+
+        return "customer/services";
 }
 
 
