@@ -26,6 +26,10 @@ public class BookedServices {
     @JoinColumn(name = "event_service_id", nullable = false)
     private EventService eventService;
 
+    @ManyToOne
+    @JoinColumn(name = "time_slot_id")
+    private TimeSlot timeSlot;
+
     public BookedServices(){
 
     }
@@ -73,5 +77,11 @@ public class BookedServices {
         this.eventService = eventService;
     }
 
-    
+    public TimeSlot getTimeSlot() {
+        return timeSlot;
+    }
+
+    public void setTimeSlot(TimeSlot timeSlot) {
+        this.timeSlot = timeSlot;
+    }
 }

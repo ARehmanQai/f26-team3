@@ -2,6 +2,7 @@ package f2_Team3.Event.Crew.controller;
 
 import f2_Team3.Event.Crew.dto.BookedServicesDTO;
 import f2_Team3.Event.Crew.service.BookedServicesService;
+import f2_Team3.Event.Crew.dto.TimeSlotDTO;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -38,6 +39,20 @@ public class BookedServicesController {
 
         bookedServicesService.cancelBooking(customerId, bookingId);
         return ResponseEntity.noContent().build();
-}
+    }
     
+    @PutMapping("/{bookingId}/reschedule")
+    public ResponseEntity<BookedServicesDTO> rescheduleBooking(
+            @PathVariable Long customerId,
+            @PathVariable Long bookingId,
+            @Valid @RequestBody TimeSlotDTO timeSlotDTO) {
+
+        BookedServicesDTO updatedBooking =
+                bookedServicesService.rescheduleBooking(
+                        customerId,
+                        bookingId,
+                        timeSlotDTO);
+
+        return ResponseEntity.ok(updatedBooking);
+    }
 }
