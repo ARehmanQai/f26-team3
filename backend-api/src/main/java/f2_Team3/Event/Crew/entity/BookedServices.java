@@ -85,5 +85,11 @@ public class BookedServices {
         this.timeSlot = timeSlot;
     }
 
-    
+    public TimeSlot getTimeSlot() {
+        return timeSlot;
+    }
+
+    public void setTimeSlot(TimeSlot timeSlot) {
+        this.timeSlot = timeSlot;
+    }
 }

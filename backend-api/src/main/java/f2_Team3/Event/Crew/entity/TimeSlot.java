@@ -7,6 +7,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotNull;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class TimeSlot {
@@ -20,6 +24,11 @@ public class TimeSlot {
 
     @NotNull 
     private LocalDateTime endTime;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "provider_id")
+    @JsonIgnore
+    private Provider provider;
 
     public TimeSlot(){
 
@@ -50,4 +59,11 @@ public class TimeSlot {
         this.endTime = endTime;
     }
 
+    public Provider getProvider() {
+        return provider;
+    }
+
+    public void setProvider(Provider provider) {
+        this.provider = provider;
+    }
 }

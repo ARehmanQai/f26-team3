@@ -2,6 +2,8 @@ package f2_Team3.Event.Crew.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import java.time.LocalDateTime;
+import jakarta.validation.constraints.Future;
 
 
 public class BookedServicesDTO {
@@ -90,4 +92,19 @@ public class BookedServicesDTO {
         this.timeSlotId = timeSlotId;
     }
     
+    public LocalDateTime getStartTime() {
+        return startTime;
+    }
+
+    public LocalDateTime getEndTime() {
+        return endTime;
+    }
+
+    public void setStartTime(LocalDateTime startTime) {
+        this.startTime = startTime;
+    }
+
+    public void setEndTime(LocalDateTime endTime) {
+        this.endTime = endTime;
+    }
 }
