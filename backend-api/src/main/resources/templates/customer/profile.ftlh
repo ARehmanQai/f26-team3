@@ -112,6 +112,12 @@
 
 </form>
 
+<div style="text-align: center;">
+<a href="/customer/dashboard/${customer.id}" class="btn event-button">
+    Back to Dashboard
+</a>
+</div>
+
     
 </body>
 
