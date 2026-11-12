@@ -25,12 +25,7 @@ public class BookedServicesDTO {
     private String location;
 
     @NotNull
-    @Future
-    private LocalDateTime startTime;
-
-    @NotNull
-    @Future
-    private LocalDateTime endTime;
+    private Long timeSlotId;
 
     public BookedServicesDTO() {
     }
@@ -87,6 +82,14 @@ public class BookedServicesDTO {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public Long getTimeSlotId() {
+        return timeSlotId;
+    }
+
+    public void setTimeSlotId(Long timeSlotId) {
+        this.timeSlotId = timeSlotId;
     }
     
     public LocalDateTime getStartTime() {

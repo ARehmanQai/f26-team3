@@ -18,6 +18,8 @@ import f2_Team3.Event.Crew.entity.TimeSlot;
 import f2_Team3.Event.Crew.repository.BookedServicesRepository;
 import f2_Team3.Event.Crew.repository.CustomerRepository;
 import f2_Team3.Event.Crew.repository.EventServiceRepository;
+import f2_Team3.Event.Crew.entity.TimeSlot;
+import f2_Team3.Event.Crew.repository.TimeSlotRepository;
 
 @Service
 public class BookedServicesService {
@@ -25,69 +27,50 @@ public class BookedServicesService {
     private final BookedServicesRepository bookedServicesRepository;
     private final CustomerRepository customerRepository;
     private final EventServiceRepository eventServiceRepository;
-    private final TimeSlotService timeSlotService;
+    private final TimeSlotRepository timeSlotRepository;
 
-    public BookedServicesService(
-            BookedServicesRepository bookedServicesRepository,
-            CustomerRepository customerRepository,
-            EventServiceRepository eventServiceRepository,
-            TimeSlotService timeSlotService) {
-
+    public BookedServicesService(BookedServicesRepository bookedServicesRepository, CustomerRepository customerRepository, EventServiceRepository eventServiceRepository, TimeSlotRepository timeSlotRepository) {
         this.bookedServicesRepository = bookedServicesRepository;
         this.customerRepository = customerRepository;
         this.eventServiceRepository = eventServiceRepository;
-        this.timeSlotService = timeSlotService;
+        this.timeSlotRepository = timeSlotRepository;
     }
 
-    @Transactional
-    public BookedServicesDTO bookService(BookedServicesDTO dto) {
+public BookedServicesDTO bookService(BookedServicesDTO bookedServicesDTO) {
 
-        Customer customer = customerRepository.findById(dto.getCustomerId())
-                .orElseThrow(() ->
-                        new NotFoundException("Customer not found"));
+    Customer customer = customerRepository.findById(bookedServicesDTO.getCustomerId())
+        .orElseThrow(() -> new NotFoundException("Customer not found"));
 
-        EventService eventService =
-                eventServiceRepository.findById(dto.getEventServiceId())
-                        .orElseThrow(() ->
-                                new NotFoundException("Event service not found"));
+    EventService eventService = eventServiceRepository.findById(bookedServicesDTO.getEventServiceId())
+        .orElseThrow(() -> new NotFoundException("Event service not found"));
 
-        Provider provider = eventService.getProvider();
+    TimeSlot timeSlot = timeSlotRepository.findById(bookedServicesDTO.getTimeSlotId())
+        .orElseThrow(() -> new NotFoundException("Time slot not found"));
 
-        if (provider == null) {
-            throw new ResponseStatusException(
-                    HttpStatus.CONFLICT,
-                    "This event service has no provider assigned.");
-        }
+    BookedServices booking = new BookedServices(
+        "BOOKED",
+        bookedServicesDTO.getNotes(),
+        bookedServicesDTO.getLocation(),
+        customer,
+        eventService,
+        timeSlot
+    );
 
-        validateBookingTimes(dto.getStartTime(), dto.getEndTime());
+    BookedServices savedBooking = bookedServicesRepository.save(booking);
 
-        ensureNoConflict(
-                provider.getId(),
-                dto.getStartTime(),
-                dto.getEndTime(),
-                null);
+    BookedServicesDTO response = new BookedServicesDTO(
+        savedBooking.getCustomer().getId(),
+        savedBooking.getEventService().getId(),
+        savedBooking.getStatus(),
+        savedBooking.getNotes(),
+        savedBooking.getLocation()
+    );
 
-        TimeSlot timeSlot = new TimeSlot(
-                dto.getStartTime(),
-                dto.getEndTime());
+    response.setId(savedBooking.getId());
+    response.setTimeSlotId(savedBooking.getTimeSlot().getId());
 
-        timeSlot.setProvider(provider);
-        TimeSlot savedTimeSlot = timeSlotService.createTimeSlot(timeSlot);
-
-        BookedServices booking = new BookedServices(
-                "BOOKED",
-                dto.getNotes(),
-                dto.getLocation(),
-                customer,
-                eventService);
-
-        booking.setTimeSlot(savedTimeSlot);
-
-        BookedServices savedBooking =
-                bookedServicesRepository.save(booking);
-
-        return toDTO(savedBooking);
-    }
+    return response;
+}
 
     @Transactional
     public void cancelBooking(Long customerId, Long bookingId) {
